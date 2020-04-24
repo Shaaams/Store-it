@@ -23,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
             customHeight: 0.17,
             fontFamily: 'Pacifico',
             fontSize: 25.0,
+            imagePath: 'images/icons/shop100.png',
           ),
           SizedBox(
             height: height * 0.1,

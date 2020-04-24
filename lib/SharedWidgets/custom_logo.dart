@@ -5,9 +5,10 @@ class CustomLogo extends StatelessWidget {
   final double customHeight;
   final String fontFamily;
   final double fontSize;
+  final String imagePath;
 
 
-  CustomLogo({@required this.title, @required this.customHeight, @required this.fontFamily, @required this.fontSize});
+  CustomLogo({@required this.title, @required this.customHeight, @required this.fontFamily, @required this.fontSize, @required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CustomLogo extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Image(image: AssetImage('images/icons/shop100.png')),
+            Image(image: AssetImage(this.imagePath)),
             Positioned(
               bottom: 0,
               child: Text(
