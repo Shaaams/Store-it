@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:storeit/SharedWidgets/custom_logo.dart';
 import 'package:storeit/SharedWidgets/custom_textfield.dart';
-import 'package:storeit/constants.dart';
-import 'package:storeit/screens/signup_screen.dart';
+import 'package:storeit/screens/login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  static String id ='LoginScreen';
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
+import '../constants.dart';
 
-class _LoginScreenState extends State<LoginScreen> {
+class SignUpScreen extends StatelessWidget {
+  static String id='SignUpScreen';
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -25,7 +21,14 @@ class _LoginScreenState extends State<LoginScreen> {
             fontSize: 25.0,
           ),
           SizedBox(
-            height: height * 0.1,
+            height: height * 0.05,
+          ),
+          CustomField(
+            hint: 'Enter Your Name',
+            icon: Icons.person,
+          ),
+          SizedBox(
+            height: height * 0.02,
           ),
           CustomField(
             hint: 'Enter Your Email',
@@ -39,6 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
             icon: Icons.lock,
           ),
           SizedBox(
+            height: height * 0.02,
+          ),
+          CustomField(
+            hint: 'Confirm Password',
+            icon: Icons.lock,
+          ),
+          SizedBox(
             height: height * 0.03,
           ),
           Padding(
@@ -49,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               color: Colors.black,
               child: Text(
-                'Login',
+                'Sign up',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -68,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Don\'t Have An Account ?  ',
+                'Do Have An Account ?  ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -76,10 +86,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               GestureDetector(
                 onTap: (){
-                  Navigator.pushNamed(context, SignUpScreen.id);
+                  Navigator.pushNamed(context, LoginScreen.id);
                 },
                 child: Text(
-                  'Sign up',
+                  'Login',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -93,5 +103,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-
